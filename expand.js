@@ -6,16 +6,15 @@
 
 (function( $ ) {
     $.fn.expand = function(options) {
-        
-        var mainObj = $(this);
-        
-        if(mainObj[0] === undefined)
-            return;
 		
         var settings = $.extend( {
-            'wrapper': 'body',
             'end':   ''
         }, options);
+        
+        var mainObj = $(this);
+            if(mainObj[0] === undefined)
+                return;
+        var wrapper = mainObj.parent();
         
         $(window).on("load resize", function(){
             setHeight();
@@ -26,10 +25,10 @@
 
             height -= subtract('html', true);
             height -= subtract('body', true);
-            height -= subtract(settings.wrapper, true);
+            height -= subtract(wrapper, true);
             height -= subtract(mainObj, false);
             
-            $(settings.wrapper).children().not(mainObj).each(function(){
+            $(wrapper).children().not(mainObj).each(function(){
                 height -= $(this).outerHeight(true);
                 console.log($(this));
                 console.log(height);
