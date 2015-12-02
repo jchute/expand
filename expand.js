@@ -1,4 +1,5 @@
 /*
+  Expand - Short Page Fix
   Version: 1.0
   Developer: Jonathan Chute
   Year: 2015
