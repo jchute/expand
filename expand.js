@@ -33,8 +33,6 @@
 
             $(wrapper).children().not(mainObj).each(function(){
                 height -= $(this).outerHeight(true);
-                console.log($(this));
-                console.log(height);
                 if(settings.end != '') if($(this).is(settings.end)) return false;
             });
 
