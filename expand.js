@@ -1,8 +1,8 @@
 /*
   Expand - Short Page Fix
-  Version: 1.0
+  Version: 1.1
   Developer: Jonathan Chute
-  Year: 2015
+  Year: 2016
 */
 
 (function( $ ) {
@@ -32,6 +32,7 @@
             height -= subtract(mainObj, false);
 
             $(wrapper).children().not(mainObj).each(function(){
+                if($(this).css('position') == 'absolute') return true;
                 height -= $(this).outerHeight(true);
                 if(settings.end != '') if($(this).is(settings.end)) return false;
             });
