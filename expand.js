@@ -1,3 +1,10 @@
+/*
+  Expand - Short Page Fix
+  Version: 1.2
+  Developer: Jonathan Chute
+  Year: 2016
+*/
+
 (function( $ ) {
     $.fn.expand = function(options) {
 
