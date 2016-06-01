@@ -32,7 +32,8 @@
             height -= subtract(mainObj, false);
 
             $(wrapper).children().not(mainObj).each(function(){
-                if($(this).css('position') == 'absolute') return true;
+                var position = $(this).css('position');
+                if(position == 'absolute' || position == 'fixed') return true;
                 height -= $(this).outerHeight(true);
                 if(settings.end != '') if($(this).is(settings.end)) return false;
             });
