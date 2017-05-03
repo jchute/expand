@@ -5,9 +5,10 @@ Force an element to expand in order to fill the page.
 
 No options are required.
 
-| Option  |  Type  | Default | Description |
-|---------|--------|---------|-------------|
-|   end   | String |    ''   | Set an end point, in order to ignore elements that are placed at the end of the dom, such scripts and Absolutely placed elements. |
+| Option  |   Type   | Default | Description |
+|---------|----------|---------|-------------|
+|   end   |  String  |    ''   | Set an end point, in order to ignore elements that are placed at the end of the dom, such scripts and Absolutely placed elements. |
+|  after  | Function |  false  | Declare a function to run after the height resizes. |
 
 ## Examples:
 
@@ -26,7 +27,10 @@ HTML / Javascript
 ### Using options
 
     $('.yourDiv').parallax({
-      end: '.last'
+      end: '.last',
+      after: function() {
+        // Code to fire.
+      }
     });
 
 ## Other information
