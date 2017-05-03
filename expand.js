@@ -1,15 +1,15 @@
 /*
   Expand - Short Page Fix
-  Version: 1.2
+  Version: 1.3
   Developer: Jonathan Chute
-  Year: 2016
+  Year: 2017
 */
-
 (function( $ ) {
     $.fn.expand = function(options) {
 
         var settings = $.extend( {
-            'end':   ''
+            'end':   '',
+            'after': false,
         }, options);
 
         var mainObj = $(this);
@@ -21,6 +21,7 @@
 
         $(window).on("load resize", function(){
             setHeight();
+            settings.after();
         });
 
         function setHeight() {
