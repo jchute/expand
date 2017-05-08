@@ -21,7 +21,9 @@
 
         $(window).on("load resize", function(){
             setHeight();
-            settings.after();
+            if(settings.after != false) {
+                settings.after();
+            }
         });
 
         function setHeight() {
