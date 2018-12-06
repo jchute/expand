@@ -5,10 +5,12 @@ Force an element to expand in order to fill the page.
 
 No options are required.
 
-| Option  |   Type   | Default | Description |
-|---------|----------|---------|-------------|
-|   end   |  String  |    ''   | Set an end point, in order to ignore elements that are placed at the end of the dom, such scripts and Absolutely placed elements. |
-|  after  | Function |  false  | Declare a function to run after the height resizes. |
+|  Option  |   Type   | Default | Description |
+|----------|----------|---------|-------------|
+|   last   |  Element |    ''   | Set an end point, in order to ignore elements that are placed at the end of the dom, such as scripts and Absolutely placed elements. |
+|   after  | Function |  false  | Declare a function to run after the height resizes. |
+|  wrapper |  String  |  'body' | Set which tag to treat as the main wrapping element. |
+| sections |  String  |    ''   | Sets which tags to remove from the main body. The tag being checked is ignored. Empty string checks all. |
 
 ## Examples:
 
@@ -27,7 +29,9 @@ HTML / Javascript
 ### Using options
 
     $('.yourDiv').parallax({
-      end: '.last',
+      wrapper: 'body',
+      last: $('.last'),
+      sections: '.page-section',
       after: function() {
         // Code to fire.
       }
