@@ -8,7 +8,7 @@
     $.fn.expand = function(options) {
 
         var settings = $.extend( {
-            'sections': 'div',
+            'sections': '',
             'last':   '',
             'wrapper': 'body',
             'after': false,
@@ -21,7 +21,6 @@
         }
 
         settings.sections = $(settings.wrapper).children( settings.sections );
-            
 
         setHeight(); setInterval( setHeight, 400 );
 
